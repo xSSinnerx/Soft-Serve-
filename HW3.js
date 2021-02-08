@@ -37,7 +37,9 @@ console.log (arr);
 
 // task 4 
 function raiseToDegree (a,b){
-result = Math.pow (3,4);
+  a = prompt ('Напиши номер A')
+  b = prompt ('Напиши номер B')
+result = Math.pow (a,b);
 return result
 }
 raiseToDegree ()
@@ -55,24 +57,47 @@ function findMin(){
       let min = findMin(10, 11,12,13,55,1,44,-1,-44,66,77);
       console.log("=>: "+ min);
 
-// task 6 task ще не доробив. 
+// task 6 
 
 
-function findUnique(arr) {
-        const seenValues = {}
-      
-        for (let i = 0; i < arr.length; i++) {
-          if (seenValues[arr[i]]) {
-            return false;
-          } else {
-            seenValues[arr[i]] = true
+function findUnique(arr){      
+        for (let i = 0; i < arr.length; i++){
+          for (let j = (i + 1); j < arr.length; j++) {
+            if (arr[1] === arr [j]){
+              return false;
+            }
           }
         }
-      
         return true;
       }
 
-let arr = (1,2,4,5,3);
-findUnique = arr ;
+console.log (findUnique ([1, 2, 3, 5, 3,]));
 
+// task 7 
+function lastElem (arr, count) {
+  if (count == null) {
+    console.log (arr.pop())
+  }
+  else {
+    console.log (arr.slice (-count));
+  }
+}
+console.log (lastElem ([3,4,10,-5]));
+console.log (lastElem ([3,4,10,-5],2));
+console.log (lastElem ([3,4,10,-5],8));
 
+// task 8 
+
+function bigFirstLetter (str)
+{
+  let array1 = str.split (' ');
+  let newarray1 = [];
+
+  for (let i = 0; i < array1.length; i++){
+newarray1.push(array1[i].charAt(0).toUpperCase()+array1[i].slice(1));
+  }
+  return newarray1.join ('');
+  
+}
+
+console.log(bigFirstLetter('i love java script'));
